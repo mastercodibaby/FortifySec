@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mastercodibaby.github.io/FortifySec/sitemap.xml
