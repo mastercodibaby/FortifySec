@@ -16,6 +16,7 @@ function openDB() {
     };
     request.onsuccess = e => resolve(e.target.result);
     request.onerror = reject;
+  });
 }
 
 async function pushToQueue(payload) {
@@ -43,6 +44,7 @@ async function popAllFromQueue() {
         resolve(items);
       }
     };
+  });
 }
 
 // ---------- INSTALL ----------
@@ -52,6 +54,7 @@ self.addEventListener('install', event => {
     caches.open(CACHE_NAME)
       .then(cache => cache.addAll(PRECACHE_ASSETS))
   );
+});
 
 // ---------- ACTIVATE ----------
 self.addEventListener('activate', event => {
@@ -61,6 +64,7 @@ self.addEventListener('activate', event => {
     )
   );
   self.clients.claim();
+});
 
 // ---------- FETCH WITH BACKGROUND SYNC ----------
 self.addEventListener('fetch', event => {
@@ -75,21 +79,41 @@ self.addEventListener('fetch', event => {
         await pushToQueue({
           url: req.url,
           body,
-          headers: [...req.headers],
+          headers: Object.fromEntries(req.headers.entries()),
           method: req.method
-        
+        });
+
         // Register Background Sync
-        const reg = await self.registration.sync.register('sync-bulsionysec');
+        try {
+          await self.registration.sync.register('sync-bulsionysec');
+        } catch (err) {
+          console.error('Background sync failed to register:', err);
+        }
 
         return new Response(
           JSON.stringify({ queued: true, offline: true }),
           { headers: { 'Content-Type': 'application/json' } }
         );
+      })
     );
     return;
   }
 
-  // Default: your network/cache logic for GETs
+  // Navigation requests (Network-first with fallback)
+  if (req.mode === 'navigate' || (req.headers.get('accept') || '').includes('text/html')) {
+    event.respondWith(
+      fetch(req)
+        .then(resp => {
+          const respClone = resp.clone();
+          caches.open(CACHE_NAME).then(cache => cache.put(req, respClone));
+          return resp;
+        })
+        .catch(() => caches.match('./index.html'))
+    );
+    return;
+  }
+
+  // Default GET static resources (Cache-first)
   if (req.method === 'GET') {
     event.respondWith(
       caches.match(req).then(cached => {
@@ -98,14 +122,22 @@ self.addEventListener('fetch', event => {
           const clone = res.clone();
           caches.open(CACHE_NAME).then(cache => cache.put(req, clone));
           return res;
+        }).catch(() => {
+          if (req.destination === 'image') {
+            return caches.match('./icon-512x512.png');
+          }
+        });
+      })
     );
   }
+});
 
 // ---------- BACKGROUND SYNC EVENT ----------
 self.addEventListener('sync', event => {
   if (event.tag === 'sync-bulsionysec') {
     event.waitUntil(flushQueue());
   }
+});
 
 async function flushQueue() {
   const items = await popAllFromQueue();
@@ -122,35 +154,3 @@ async function flushQueue() {
     }
   }
 }
-  // Skip non-GET requests
-  if (event.request.method !== 'GET') return;
-
-  // Use network-first for same-origin navigation (so content updates)
-  if (event.request.mode === 'navigate' || (event.request.headers.get('accept') || '').includes('text/html')) {
-    event.respondWith(
-      fetch(event.request)
-        .then(resp => {
-          // Update cache with fresh HTML
-          const respClone = resp.clone();
-          caches.open(CACHE_NAME).then(cache => cache.put(event.request, respClone));
-          return resp;
-        .catch(() => caches.match('/index.html')) // fallback to cached shell
-    );
-    return;
-  }
-
-  // For static resources: cache-first
-  event.respondWith(
-    caches.match(event.request).then(cached => {
-      if (cached) return cached;
-      return fetch(event.request)
-        .then(res => {
-          // Put a copy in cache
-          const resClone = res.clone();
-          caches.open(CACHE_NAME).then(cache => cache.put(event.request, resClone));
-          return res;
-        .catch(() => {
-          // optional fallback for images
-          if (event.request.destination === 'image') {
-            return caches.match('/icon-192x192.png');
-          }
