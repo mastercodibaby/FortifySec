@@ -15,13 +15,13 @@ This standalone **Bash configuration utility** is designed to load and display s
 ### ⚙️ Features
 - MAC and Bluetooth address configuration
 - IPv4/IPv6 setup
-- Firewall rule simulation
+- Firewall rule settings
 - Telemetry toggling
 - Hostname and DNS configuration
 - SHA-256 encryption with generated SHA-256 key
 - Traceroute blocking and fingerprint blocking
 - JSON-style formatted system Traceroute
-
+- And more
 ---
 
 ### 🚀 Usage
