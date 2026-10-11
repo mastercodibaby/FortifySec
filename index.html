@@ -64,18 +64,9 @@ if ('serviceWorker' in navigator) {
 
   <!-- Preload (hint for browsers; in single-file usage these are hints only) -->
   <link rel="preload" href="/index.html" as="document">
-  <link rel="preload" href="/styles.css" as="style">
+  <link rel="stylesheet" href="/styles.css" as="style">
   <link rel="preload" href="/sw.js" as="script">
-
-  <style>
-    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;margin:20px;background:#f7fafc;color:#0f172a}
-    .card{background:#fff;padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(2,6,23,0.08);max-width:980px;margin:12px auto}
-    pre{background:#0b1220;color:#dbeafe;padding:12px;border-radius:8px;overflow:auto}
-    button{cursor:pointer;padding:8px 12px;border-radius:8px;border:0;background:#0ea5a4;color:white}
-    .row{display:flex;gap:12px;flex-wrap:wrap}
-    .muted{color:#475569;font-size:0.95rem}
-    h1{margin:0 0 8px 0}
-  </style>
+  
 </head>
 <body>
   <div class="card">
