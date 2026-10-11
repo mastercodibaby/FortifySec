@@ -1,4 +1,4 @@
-const CACHE_NAME = 'bulsionysec-v1';
+const CACHE_NAME = 'fortifysec-v1';
 const PRECACHE_ASSETS = [
   './',
   './index.html',
