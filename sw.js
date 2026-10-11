@@ -5,7 +5,6 @@ const PRECACHE_ASSETS = [
   './styles.css',
   './app.webmanifest',
   './icon-512x512.png',
-  './icon-192x192.png'
 ];
 
 // ---------- IndexedDB QUEUE ----------
