@@ -1,5 +1,3 @@
-HOLDERSS.md
-
 ## 🔐 FortifySec™ SP Bash Program
 
 **Author:** [mastercodibaby](https://github.com/mastercodibaby)  
