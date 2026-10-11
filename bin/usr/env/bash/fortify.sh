@@ -80,7 +80,7 @@ if command -v jq &>/dev/null; then
           rp_filter_enabled: true
         },
         encryption: {
-          method: "AES-256",
+          method: "SHA-256",
           session_key_sha256: $crypto_key
         }
       }
@@ -104,7 +104,7 @@ else
       "rp_filter_enabled": true
     },
     "encryption": {
-      "method": "AES-256",
+      "method": "SHA-256",
       "session_key_sha256": "$CRYPTO_KEY"
     }
   }
