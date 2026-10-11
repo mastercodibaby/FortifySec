@@ -123,7 +123,7 @@ footer {
 }
 
 /* Action Button */
-.donate-button {
+.button {
     display: inline-block;
     margin-top: 15px;
     padding: 12px 25px;
@@ -140,7 +140,7 @@ footer {
     transition: all 0.3s ease;
 }
 
-.donate-button:hover {
+.button:hover {
     background-color: var(--accent-green);
     color: var(--bg-primary);
     box-shadow: 0 0 25px rgba(0, 255, 102, 0.6);
