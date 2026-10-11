@@ -39,15 +39,62 @@ if ('serviceWorker' in navigator) {
 </head>
 <body>
   <div class="card">
-    <h1>FortifySec — Viewer</h1>
-    <p class="muted">This page shows the provided Bash script and extracts the configuration (preloaded) for easy viewing of FortifySec.</p>
-<div>
     <section style="margin-top:10px;">
       <hhtmlript (fortify.sh)</h3>
       <pre id="scriptBlock" tabindex="0"></pre>
     </section>
   </div>
 
+<article class="promo-container">
+    <header class="promo-header">
+        <h1>FortifySec</h1>
+        <p class="tagline">Top-notch cybersecurity for the rest of us!</p>
+    </header>
+
+    <section class="promo-intro">
+        <p>
+            Enterprise-grade digital defense shouldn't require a degree in cybersecurity or a massive IT budget. 
+            <strong>FortifySec</strong> brings automated, essential system hardening directly to your personal devices—lightweight, 
+            transparent, and completely free.
+        </p>
+    </section>
+
+    <section class="promo-features">
+        <h2>Why Choose FortifySec?</h2>
+        <p>
+            Most computers ship with open default ports, background services, and verbose network protocols exposed to local 
+            network scanners. FortifySec locks down your system with zero bloatware:
+        </p>
+
+        <ul>
+            <li>
+                <strong>Active Shielding (Firewall Policies):</strong> Restricts unrequested incoming connections while keeping your active traffic seamless.
+            </li>
+            <li>
+                <strong>Stealth Mode (Kernel Hardening):</strong> Silences ping echo requests and broadcast listening, rendering your device invisible to automated port scans.
+            </li>
+            <li>
+                <strong>IP Spoofing Protection:</strong> Enforces Reverse Path Filtering (<code>rp_filter</code>) at the Linux kernel level to prevent fake data packet insertion.
+            </li>
+            <li>
+                <strong>Cryptographic Verification:</strong> Generates dynamic SHA-256 session tokens and structured JSON audit reports so you can verify your device's security status.
+            </li>
+        </ul>
+    </section>
+
+    <section class="promo-transparency">
+        <h2>Simple, Transparent, Open Source</h2>
+        <p>
+            Delivered as a fast Progressive Web App (PWA) and powered by native Bash automation, FortifySec gives you 100% control over your security. 
+            Inspect every line of code on GitHub before running it—no hidden background trackers, no proprietary bloatware, and no telemetry.
+        </p>
+        
+        <blockquote class="promo-quote">
+            Take control of your device's digital perimeter today. Simple, uncompromising defense built for everyone.
+        </blockquote>
+    </section>
+</article>
+ 
   <!-- Embedded configuration: this simulates "preload" data that the inline script will read immediately. -->
   <script id="embedded-bash" type="appplication/bash">
 #!/usr/bin/env bash
