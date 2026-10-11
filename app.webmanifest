@@ -1,7 +1,7 @@
 {
-  "name": "BulsionySec™ Fortify - Viewer",
-  "short_name": "BulsionySec",
-  "description": "A standalone Bash utility showcasing secure device configs and an installable PWA wrapper for the BulsionySec viewer.",
+  "name": FortifySec - Viewer",
+  "short_name": "FortifySec",
+  "description": "A standalone Bash utility securing your devices and an installable PWA wrapper for the FortifySec viewer.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
