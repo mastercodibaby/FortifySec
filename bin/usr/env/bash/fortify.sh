@@ -87,7 +87,6 @@ if command -v jq &>/dev/null; then
     }'
 else
   # Fallback valid JSON formatted raw text if jq is absent
-  cat EOF>>
 {
   "bulsiony_sec": {
     "status": "Fortified",
@@ -110,5 +109,4 @@ else
     }
   }
 }
-EOF
 fi
