@@ -64,7 +64,7 @@ if command -v jq &>/dev/null; then
     --arg ip4 "$IP4_VAL" \
     --arg crypto_key "$CRYPTO_KEY" \
     '{
-      bulsiony_sec: {
+      fortify_sec: {
         status: "Fortified",
         hostname: $hostname,
         ipv4: $ip4,
@@ -88,7 +88,7 @@ if command -v jq &>/dev/null; then
 else
   # Fallback valid JSON formatted raw text if jq is absent
 {
-  "bulsiony_sec": {
+  "fortify_sec": {
     "status": "Fortified",
     "hostname": "$HOSTNAME_VAL",
     "ipv4": "$IP4_VAL",
