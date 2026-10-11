@@ -1,76 +1,148 @@
+/* ==========================================
+   FortifySec - Futuristic Cybersecurity PWA
+   ================================---------- */
+
+:root {
+    --bg-primary: #0a0e17;
+    --bg-secondary: #121826;
+    --bg-card: rgba(18, 24, 38, 0.7);
+    --border-color: #1e293b;
+    --accent-cyan: #00f0ff;
+    --accent-green: #00ff66;
+    --text-main: #e2e8f0;
+    --text-muted: #94a3b8;
+    --glow-cyan: 0 0 15px rgba(0, 240, 255, 0.25);
+    --glow-green: 0 0 15px rgba(0, 255, 102, 0.25);
+    --font-mono: 'Courier New', Courier, monospace;
+}
+
 /* General styles */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: var(--font-mono), 'Segoe UI', Tahoma, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f5f5f5;
-    color: #333;
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+    background-image: 
+        radial-gradient(circle at 50% 0%, #111e38 0%, transparent 70%);
+    background-attachment: fixed;
 }
 
+/* Header */
 header {
     text-align: center;
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, var(--bg-secondary), #0f172a);
+    color: var(--text-main);
+    padding: 25px 15px;
+    border-bottom: 1px solid var(--accent-cyan);
+    box-shadow: var(--glow-cyan);
 }
 
 header h1 {
     margin: 0;
     font-size: 2.5em;
+    color: var(--accent-cyan);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
 }
 
 header p {
-    margin: 5px 0;
+    margin: 8px 0 0;
+    color: var(--text-muted);
+    font-size: 0.95em;
 }
 
+/* Main Layout */
 main {
-    padding: 10px;
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 0 20px;
 }
 
+/* Headings */
 h2 {
-    color: #007bff;
-    border-bottom: 2px solid #007bff;
-    padding-bottom: 5px;
+    color: var(--accent-cyan);
+    border-bottom: 1px dashed var(--accent-cyan);
+    padding-bottom: 8px;
+    margin-top: 40px;
+    font-size: 1.4em;
+    letter-spacing: 1px;
 }
 
+/* Code & Terminals */
 pre {
-    background-color: #e9ecef;
-    padding: 10px;
-    border-radius: 5px;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-left: 3px solid var(--accent-cyan);
+    padding: 15px;
+    border-radius: 6px;
     overflow-x: auto;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 code {
-    color: #d63384;
+    font-family: var(--font-mono);
+    color: var(--accent-green);
+    font-weight: 600;
+    text-shadow: 0 0 5px rgba(0, 255, 102, 0.3);
+}
+
+/* Lists */
+ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+ul li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 8px;
+    color: var(--text-muted);
+}
+
+ul li::before {
+    content: ">";
+    position: absolute;
+    left: 0;
+    color: var(--accent-cyan);
     font-weight: bold;
 }
 
-ul {
-    list-style-type: square;
-    margin-left: 10px;
-}
-
+/* Footer */
 footer {
     text-align: center;
-    padding: 10px;
-    background-color: #007bff;
-    color: #fff;
+    padding: 20px;
+    background-color: var(--bg-secondary);
+    color: var(--text-muted);
+    border-top: 1px solid var(--border-color);
+    font-size: 0.85em;
+    margin-top: 50px;
 }
 
+/* Action Button */
 .donate-button {
     display: inline-block;
-    margin-top: 10px;
-    padding: 10px 20px;
-    font-size: 1em;
-    background-color: #28a745;
-    color: #fff;
+    margin-top: 15px;
+    padding: 12px 25px;
+    font-size: 0.95em;
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background-color: transparent;
+    color: var(--accent-green);
+    border: 1px solid var(--accent-green);
     text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    border-radius: 4px;
+    box-shadow: var(--glow-green);
+    transition: all 0.3s ease;
 }
 
 .donate-button:hover {
-    background-color: #218838;
+    background-color: var(--accent-green);
+    color: var(--bg-primary);
+    box-shadow: 0 0 25px rgba(0, 255, 102, 0.6);
+    transform: translateY(-2px);
 }
