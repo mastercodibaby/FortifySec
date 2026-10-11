@@ -10,7 +10,7 @@ HOLDERSS.md
 ---
 
 ### 🧩 Overview
-This standalone **Bash configuration utility** is designed to load and display secure system configurations in a JSON-like format. It demonstrates principles of encryption, device identity simulation, and basic network parameter setup.
+This standalone **Bash configuration utility** is designed to load and display secure system configurations in a JSON-like format. It demonstrates principles of encryption, device identity, and basic network parameter setup.
 
 ---
 
