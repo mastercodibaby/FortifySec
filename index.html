@@ -177,7 +177,7 @@ fi
       const m = line.match(/^([a-zA-Z0-9_]+)=(?:"([^"]*)"|(true|false|[0-9:._-]+))$/);
       if(m){
         const key=m[1]; const val=(m[2]!==undefined?m[2]:(m[3]));
-        cfg[key]= (val==='true'?true:(val==='false'?false:(/^[0-9]+$/.test(val)?Number(val):val)));
+        cfg[key]=(val==='true'?true:(val==='false'?false:(/^[0-9]+$/.test(val)?Number(val):val)));
       }
   </script>
    
