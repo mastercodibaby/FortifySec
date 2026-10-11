@@ -42,7 +42,7 @@ This standalone **Bash configuration utility** is designed to load and display s
 ### 📦 Example Output
 ```json
 {
-      bulsiony_sec: {
+      fortify_sec: {
         status: "Fortified",
         hostname: $hostname,
         ipv4: $ip4,
