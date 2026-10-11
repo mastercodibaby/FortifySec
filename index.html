@@ -14,7 +14,7 @@
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', async () => {
     try {
-      const reg = await navigator.serviceWorker.register('./sw.js', { scope: './' });
+      const reg = await navigator.serviceWorker.register('./sw.js', { scope: './"
       console.log('Service worker registered with scope:', reg.scope);
 
       // Optional: listen for updates
@@ -22,12 +22,9 @@ if ('serviceWorker' in navigator) {
         const newWorker = reg.installing;
         newWorker.addEventListener('statechange', () => {
           console.log('New SW state:', newWorker.state);
-        });
-      });
     } catch (err) {
       console.error('Service worker registration failed:', err);
-    }
-  });
+      }
 }
 </script>
 
@@ -182,8 +179,6 @@ fi
         const key=m[1]; const val=(m[2]!==undefined?m[2]:(m[3]));
         cfg[key]= (val==='true'?true:(val==='false'?false:(/^[0-9]+$/.test(val)?Number(val):val)));
       }
-    });
-  })();
   </script>
    
 <!-- GitHub Sponsorship Card -->
