@@ -64,7 +64,14 @@ This standalone **Bash configuration utility** is designed to load and display s
       }
     }
 ```
----
+### Become a Sponsor on GitHub ###
+<!-- GitHub Sponsorship Card -->
+<section id="sponsor-card" style="max-width:480px;margin:40px auto;padding:20px;background:#111;color:#f4f4f4;border-radius:16px;box-shadow:0 0 20px rgba(0,0,0,0.6);text-align:center;font-family:'Inter',sans-serif;">
+  <h2 style="font-size:1.5em;margin-bottom:10px;">❤️ Sponsor This Project</h2>
+  <p style="font-size:0.95em;margin-bottom:20px;">Support ongoing security scripting and development by <strong>@mastercodibaby</strong>.</p>
+  <a href="https://github.com/sponsors/mastercodibaby" target="_blank" style="display:inline-block;padding:12px 24px;background:#e63946;color:#fff;border-radius:8px;text-decoration:none;font-weight:600;transition:background 0.3s ease;">Sponsor on GitHub</a>
+  <p style="margin-top:16px;font-size:0.85em;color:#aaa;">Every contribution helps a lot.</p>
+</section>
 
 ## Disclaimer of Liability
 THIS SOFTWARE AND ITS DOCUMENTATION ARE PROVIDED **“AS IS”** AND WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED. THE AUTHOR AND COPYRIGHT HOLDERS OR PUBLISHERS SHALL NOT BE LIABLE FOR ANY DAMAGES, WHETHER DIRECT, INDIRECT, INCIDENTAL, CONSEQUENTIAL, OR OTHERWISE, ARISING FROM THE USE OR INABILITY TO USE THIS SOFTWARE.
