@@ -6,10 +6,9 @@
  <meta name="aplicatiom-name" content="FortifySec - Viewer">
   <link rel="icon" sizes="512x512" href="./icon-512x512.png">
 <link rel="manifest" href="./app.webmanifest">
-<link rel="serviceworker" href="./sw.js">
+<link rel="preload" href="./sw.js" as="script">
 <link rel="preload" as="script" type="application/bash" href="./bin//usr/env/bash/fortify.sh">
-<link rel="preload" as="script" type="application/bash">
-  <meta name="theme-color" content="#ffffff">
+  <meta name="theme-color" content="#000000">
 
 <script>
 if ('serviceWorker' in navigator) {
@@ -39,7 +38,6 @@ if ('serviceWorker' in navigator) {
   <!-- Preload (hint for browsers; in single-file usage these are hints only) -->
   <link rel="preload" href="./index.html" as="document">
   <link rel="stylesheet" href="./styles.css">
-  <link rel="preload" href="./sw.js" as="script">
   
 </head>
 <body>
