@@ -9,25 +9,6 @@
 <link rel="preload" href="./sw.js" as="script">
 <link rel="preload" as="script" type="application/bash" href="./bin//usr/env/bash/fortify.sh">
   <meta name="theme-color" content="#000000">
-
-<script>
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', async () => {
-    try {
-      const reg = await navigator.serviceWorker.register('./sw.js', { scope: './"
-      console.log('Service worker registered with scope:', reg.scope);
-
-      // Optional: listen for updates
-      reg.addEventListener('updatefound', () => {
-        const newWorker = reg.installing;
-        newWorker.addEventListener('statechange', () => {
-          console.log('New SW state:', newWorker.state);
-    } catch (err) {
-      console.error('Service worker registration failed:', err);
-      }
-}
-</script>
-
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>FortifySec — Viewer</title>
@@ -250,7 +231,7 @@ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS OR PUBLISHERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+SOFTWARE.</strong>
     <br><br>
      <strong>By using this program, you agree to take full responsibility for its operation and any resulting effects on systems, data, or networks.</strong>
     </strong>
