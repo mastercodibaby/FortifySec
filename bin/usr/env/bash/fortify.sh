@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-#
 # FortifySec - System Fortification & Hardening Utility
 # Copyright © FortifySec™ SP
 #
@@ -110,3 +108,33 @@ else
   }
 }
 fi
+
+sudo ip addr add 127.0.0.1 dev eth0
+
+# Define the IP address
+IP="127.0.0.1"
+
+# Define the HTTPS protocol
+PROTOCOL="https"
+
+# Construct the URL
+URL="${PROTOCOL}://${IP}"
+
+# Display connection information
+echo "IP Address: $IP"
+echo "Protocol: $PROTOCOL"
+echo "URL: $URL"
+
+# Connect to the HTTPS server
+curl --verbose --connect-timeout 0 "$URL"
+
+IP="127.0.0.1"
+URL="https://${IP}"
+
+echo "Checking HTTPS connection to $URL"
+
+curl --silent --show-error \
+     --output /dev/null \
+     --write-out "HTTP Status: %{http_code}\n" \
+     --connect-timeout 10 \
+     "$URL"
